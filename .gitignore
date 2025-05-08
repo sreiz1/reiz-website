@@ -27,3 +27,12 @@ package-lock.json
 
 # ide
 .idea/
+
+# yarn
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
