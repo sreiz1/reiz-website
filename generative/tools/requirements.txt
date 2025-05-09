@@ -1,4 +1,6 @@
-smolagents
+smolagents[openai]
+duckduckgo_search
+gradio_client
 transformers
 
 #arize-phoenix

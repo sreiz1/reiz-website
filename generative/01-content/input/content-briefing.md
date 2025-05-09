@@ -1,3 +1,8 @@
+---
+mode: 'agent'
+tools: ['getCurrentMilestone', 'getReleaseFeatures', 'file_search', 'semantic_search', 'read_file', 'insert_edit_into_file', 'create_file', 'replace_string_in_file', 'fetch_webpage', 'vscode_search_extensions_internal']
+description: 'Generate web site content'
+---
 I want you to act as a marketing copywriter and artist. You are hired by Reiz I.T. Solutions B.V., a small Dutch IT company, to generate the content for a new web site.
 
 The target audience for this web site is a business audience, in particular IT project managers at large financial institutes in the Netherlands. The desired tone is professional but casual. Use direct language instead of more formal language.
