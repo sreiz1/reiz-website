@@ -11,7 +11,9 @@ To generate the content you should restrict yourself to the generative/01-conten
 
 Please do the following:
 * Read the cv.md file, which contains the curriculum vitae of the company's founder and a list of completed projects;
-* Based on everything you've read generate 5 different options for a company logo. One of the options could be to use the company name initials (RIS). Save each logo as a separate JPEG file in the output folder;
+* Based on everything you've read generate 5 different prompts for a company logo. One of the options could be to use the company name initials (RIS). Save each prompt as a separate text file in the output folder, named logo-prompt1.txt, etc.;
+
+Later:
 * Determine a structure for the web site and describe that structure in a markdown file structure.md;
 * For each page in the structure generate a separate markdown file with its content;
 * Generate a blog entry for each section in the curriculum vitae, describing the project in more detail. Save each blog entry as a separate markdown file. Each file should contain a title, summary, date (based on the date range in the CV), tags and then the blog entry content;
