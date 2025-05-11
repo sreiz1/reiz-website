@@ -1,4 +1,5 @@
-smolagents[openai]
+smolagents[openai,gradio]
+huggingface_hub[cli]
 duckduckgo_search
 gradio_client
 transformers

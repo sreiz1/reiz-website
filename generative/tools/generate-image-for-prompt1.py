@@ -1,4 +1,5 @@
-# use smolagents to generate an image for a prompt
+# generate an image for a prompt
+# this version uses smolagents, an openai (gemini) model and a flux-based image generation tool
 
 import sys
 import json
@@ -38,6 +39,6 @@ with open(prompt_file, 'r') as f:
     prompt = f.read().strip()
 output_file = sys.argv[2]
 
-image_generation_tool(prompt)
+image_generation_tool("A sunny beach", output_file=output_file)
 agent = CodeAgent(tools=[image_generation_tool], model=model)
-agent.run("Generate an image and save it to " + output_file)
+agent.run("Generate an image that looks as follows: " + prompt, output_file=output_file)
