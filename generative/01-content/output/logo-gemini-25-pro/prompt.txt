@@ -1,0 +1,9 @@
+I want you to act as a marketing copywriter and artist. You are hired by Reiz I.T. Solutions B.V., a small Dutch IT company, to generate the content for a new web site.
+
+For this company generate a dynamic logo using the company initials 'RIS' in a bold, geometric font. Integrate subtle digital or data-inspired elements, such as pixelation or circuit lines, to reflect innovation and technology. Use a color palette of blue, white, and silver.
+
+(this generated the base1 image which was subsequently used for the manual editing)
+
+Please remove the Lorem Ipsum text (and also the small text below it)
+
+(this generated the base2 image which wasn't used further although it's also not bad, just slightly less dynamic)
