@@ -2,9 +2,11 @@
 	"servers": {
 		"ComfyUI custom MCP server": {
 			"type": "stdio",
-			"command": "C:\\Program Files\\Git\\git-bash",
+			"command": "c:\\users\\steven\\git\\comfyui-mcp-server\\.venv\\Scripts\\python.exe",
 			"args": [
-				"c:\\users\\steven\\git\\comfyui-mcp-server\\start.sh"
+				"c:\\users\\steven\\git\\comfyui-mcp-server\\server.py",
+				"stdio",
+				"c:\\users\\steven\\git\\comfyui-mcp-server"
 			]		
 		}
 	},
