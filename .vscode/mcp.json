@@ -1,0 +1,12 @@
+{
+	"servers": {
+		"ComfyUI custom MCP server": {
+			"type": "stdio",
+			"command": "C:\\Program Files\\Git\\git-bash",
+			"args": [
+				"c:\\users\\steven\\git\\comfyui-mcp-server\\start.sh"
+			]		
+		}
+	},
+	"inputs": []
+}
