@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Astroplate",
-    "base_url": "https://astroplate.netlify.app",
+    "title": "Reiz I.T. Solutions B.V.",
+    "base_url": "https://reiz.nl",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -9,7 +9,7 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "30",
-    "logo_text": "Astroplate"
+    "logo_text": "Reiz IT"
   },
 
   "settings": {
@@ -24,13 +24,13 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "Reiz I.T. Solutions B.V., based on Astroplate theme by [Zeon Studio](https://zeon.studio)"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Get Started",
-    "link": "https://github.com/zeon-studio/astroplate"
+    "label": "Contact us",
+    "link": "https://reiz.nl/contact"
   },
 
   "google_tag_manager": {
@@ -45,8 +45,8 @@
   },
 
   "metadata": {
-    "meta_author": "zeon.studio",
+    "meta_author": "reiz.nl",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_description": "reiz.nl corporate website"
   }
 }
