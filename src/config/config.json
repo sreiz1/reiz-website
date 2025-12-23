@@ -24,13 +24,13 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Reiz I.T. Solutions B.V., based on Astroplate theme by [Zeon Studio](https://zeon.studio)"
+    "copyright": "(c) Reiz I.T. Solutions B.V., based on Astroplate theme by [Zeon Studio](https://zeon.studio)"
   },
 
   "navigation_button": {
     "enable": true,
     "label": "Contact us",
-    "link": "https://reiz.nl/contact"
+    "link": "/contact"
   },
 
   "google_tag_manager": {
@@ -39,7 +39,7 @@
   },
 
   "disqus": {
-    "enable": true,
+    "enable": false,
     "shortname": "themefisher-template",
     "settings": {}
   },
