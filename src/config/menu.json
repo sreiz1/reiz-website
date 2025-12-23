@@ -5,49 +5,33 @@
       "url": "/"
     },
     {
-      "name": "About",
-      "url": "/about"
+      "name": "Blog",
+      "url": "/blog"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
-    },
-    {
-      "name": "Pages",
+      "name": "Socials",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Contact",
-          "url": "/contact"
+          "name": "Linkedin",
+          "url": "https://www.linkedin.com/in/sreiz/"
         },
         {
-          "name": "Blog",
-          "url": "/blog"
-        },
-        {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
+          "name": "Github",
+          "url": "https://github.com/sreiz1/"
         }
       ]
     }
   ],
   "footer": [
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Contact Us",
+      "url": "/contact"
+    },
+    {
+      "name": "Team",
+      "url": "/team"
     },
     {
       "name": "Privacy Policy",

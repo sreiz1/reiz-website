@@ -7,9 +7,9 @@
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
-    "logo_height": "30",
-    "logo_text": "Reiz IT"
+    "logo_width": "165",
+    "logo_height": "63",
+    "logo_text": "RIS logo"
   },
 
   "settings": {
@@ -34,8 +34,8 @@
   },
 
   "google_tag_manager": {
-    "enable": false,
-    "gtm_id": "GTM-XXXXXX"
+    "enable": true,
+    "gtm_id": "GTM-5Q29CBD5"
   },
 
   "disqus": {
