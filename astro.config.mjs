@@ -43,5 +43,8 @@ export default defineConfig({
     fallback: {
       nl: "en"
     },
+    routing: {
+      prefixDefaultLocale: true,
+    }
   }
 });
