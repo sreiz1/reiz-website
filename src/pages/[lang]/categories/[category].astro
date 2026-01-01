@@ -17,8 +17,10 @@ export async function getStaticPaths() {
 
     const paths2 = categories.map((category) => {
       return {
-        params: { category },
-        lang: lang,
+        params: { 
+          category: category,
+          lang: lang,
+        },
       }
     });
     paths = paths.concat(paths2);

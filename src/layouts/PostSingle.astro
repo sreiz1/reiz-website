@@ -9,9 +9,12 @@ import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
 import { render } from "astro:content";
 import { FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 import ImageMod from "./components/ImageMod.astro";
+import type { Language } from "../types/language.type";
 
-const COLLECTION_FOLDER = "blog";
-const { post } = Astro.props;
+const post = Astro.props.post;
+const lang = Astro.props.lang as Language;
+
+const COLLECTION_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
 
 const posts = await getSinglePage(COLLECTION_FOLDER);
 const similarPosts = similarItems(post, posts);
@@ -40,7 +43,7 @@ const { title, description, author, categories, image, date, tags } = post.data;
         <h1 set:html={markdownify(title)} class="h2 mb-4" />
         <ul class="mb-4">
           <li class="mr-4 inline-block">
-            <a href={`/${Astro.currentLocale}/author/${slugify(author)}`}>
+            <a href={`/${Astro.currentLocale}/team/${slugify(author)}`}>
               <FaRegUserCircle className={"mr-2 -mt-1 inline-block"} />
               {humanize(author)}
             </a>
