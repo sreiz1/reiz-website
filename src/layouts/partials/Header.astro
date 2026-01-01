@@ -75,7 +75,7 @@ const { pathname } = Astro.url;
                   {menu.children?.map((child) => (
                     <li class="nav-dropdown-item">
                       <a
-                        href={child.url}
+                        href={child.url.replace('[locale]', Astro.currentLocale ?? "")}
                         aria-label={child.name}
                         class={`nav-dropdown-link block ${
                           (pathname === `${child.url}/` ||
@@ -92,7 +92,7 @@ const { pathname } = Astro.url;
             ) : (
               <li class="nav-item">
                 <a
-                  href={menu.url}
+                  href={menu.url.replace('[locale]', Astro.currentLocale ?? "")}
                   class={`nav-link block ${
                     (pathname === `${menu.url}/` || pathname === menu.url) &&
                     "active"
@@ -110,7 +110,7 @@ const { pathname } = Astro.url;
           <li class="mt-4 inline-block lg:hidden">
             <a
               class="btn btn-outline-primary btn-sm"
-              href={navigation_button.link}
+              href={navigation_button.link.replace('[locale]', Astro.currentLocale ?? "")}
             >
               {navigation_button.label}
             </a>

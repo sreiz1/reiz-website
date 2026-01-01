@@ -4,8 +4,20 @@ import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { CollectionEntry } from "astro:content";
 import { getEntry, render } from "astro:content";
+import type { Language } from "../../types/language.type";
 
-const about = (await getEntry("about", "privacy-policy")) as CollectionEntry<"about">;
+export function getStaticPaths() {
+  return [{ params: { lang: "nl" } }, { params: { lang: "en" } }];
+}
+
+const lang = Astro.params.lang as Language;
+
+const about = ((lang == "nl") ?
+  (await getEntry("aboutNL", "privacy-policy")) as CollectionEntry<"aboutNL">
+  :
+  (await getEntry("aboutEN", "privacy-policy")) as CollectionEntry<"aboutEN">
+);
+
 const { Content } = await render(about);
 const { title, description, meta_title, image } = about.data;
 ---

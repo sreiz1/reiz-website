@@ -3,8 +3,15 @@ import Base from "@/layouts/Base.astro";
 import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser.astro";
 import { humanize } from "@/lib/utils/textConverter";
 import PageHeader from "@/partials/PageHeader.astro";
+import type { Language } from "../../../types/language.type";
 
-const BLOG_FOLDER = "blog";
+export function getStaticPaths() {
+  return [{ params: { lang: "nl" } }, { params: { lang: "en" } }];
+}
+
+const lang = Astro.params.lang as Language;
+
+const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
 
 const categories = await getTaxonomy(BLOG_FOLDER, "categories");
 const allCategories = await getAllTaxonomy(BLOG_FOLDER, "categories");
@@ -21,7 +28,7 @@ const allCategories = await getAllTaxonomy(BLOG_FOLDER, "categories");
             return (
               <li class="m-3 inline-block">
                 <a
-                  href={`/categories/${category}`}
+                  href={`/${Astro.currentLocale}/categories/${category}`}
                   class="block rounded bg-light px-4 py-2 text-xl text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark"
                 >
                   {humanize(category)}{" "}

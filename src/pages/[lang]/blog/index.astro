@@ -10,13 +10,22 @@ import PageHeader from "@/partials/PageHeader.astro";
 import PostSidebar from "@/partials/PostSidebar.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
+import type { Language } from "../../../types/language.type";
 
-const BLOG_FOLDER = "blog";
+export function getStaticPaths() {
+  return [{ params: { lang: "nl" } }, { params: { lang: "en" } }];
+}
 
-const postIndex = (await getEntry(
-  BLOG_FOLDER,
-  "-index"
-)) as CollectionEntry<"blog">;
+const lang = Astro.params.lang as Language;
+
+const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
+
+const postIndex = ((lang == "nl") ?
+  (await getEntry(BLOG_FOLDER, "-index")) as CollectionEntry<"blogNL">
+  :
+  (await getEntry(BLOG_FOLDER, "-index")) as CollectionEntry<"blogEN">
+);
+
 const posts = await getSinglePage(BLOG_FOLDER);
 const allCategories = await getAllTaxonomy(BLOG_FOLDER, "categories");
 const categories = await getTaxonomy(BLOG_FOLDER, "categories");

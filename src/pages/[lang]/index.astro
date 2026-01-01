@@ -14,8 +14,6 @@ export function getStaticPaths() {
   return [{ params: { lang: "nl" } }, { params: { lang: "en" } }];
 }
 
-export const defaultRedirect = "/nl";
-
 const lang = Astro.params.lang as Language;
 
 interface Homepage {
@@ -28,24 +26,40 @@ interface Homepage {
   features: Feature[];
 }
 
-const homepage = (await getEntry(
-  "homepage",
-  "-index"
-)) as CollectionEntry<"homepage">;
+const homepage = ((lang == "nl") ?
+   (await getEntry(
+    "homepageNL",
+    "-index"
+  )) as CollectionEntry<"homepageNL">
+    :
+   (await getEntry(
+    "homepageEN",
+    "-index"
+  )) as CollectionEntry<"homepageEN">
+);
 
 const testimonial = (await getEntry(
   "testimonialSection",
   "testimonial"
 )) as CollectionEntry<"testimonialSection">;
 
-const call_to_action = (await getEntry(
-  "ctaSection",
-  "call-to-action"
-)) as CollectionEntry<"ctaSection">;
+const call_to_action = ((lang == "nl") ?
+    (await getEntry(
+      "ctaSectionNL",
+      "call-to-action"
+    )) as CollectionEntry<"ctaSectionNL">
+      :
+    (await getEntry(
+      "ctaSectionEN",
+      "call-to-action"
+    )) as CollectionEntry<"ctaSectionEN">
+);
 
 const { banner, features } = homepage.data as Homepage;
 ---
-
+<p>
+  DEBUG, lang: {lang}, locale: {Astro.currentLocale}
+</p>
 <Base>
   <!-- Banner -->
   <section class="section pt-14">

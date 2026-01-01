@@ -2,11 +2,11 @@
   "main": [
     {
       "name": "Home",
-      "url": "/"
+      "url": "/[locale]"
     },
     {
       "name": "Blog",
-      "url": "/blog"
+      "url": "/[locale]/blog"
     },
     {
       "name": "Socials",
@@ -27,15 +27,15 @@
   "footer": [
     {
       "name": "Contact Us",
-      "url": "/contact"
+      "url": "/[locale]/contact"
     },
     {
       "name": "Team",
-      "url": "/team"
+      "url": "/[locale]/team"
     },
     {
       "name": "Privacy Policy",
-      "url": "/privacy-policy"
+      "url": "/[locale]/privacy-policy"
     }
   ]
 }

@@ -6,23 +6,32 @@ import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import taxonomyFilter from "@/lib/utils/taxonomyFilter";
 import PageHeader from "@/partials/PageHeader.astro";
+import type { Language } from "../../../types/language.type";
 
 // get static paths for all categories
 export async function getStaticPaths() {
-  const BLOG_FOLDER = "blog";
-  const categories = await getTaxonomy(BLOG_FOLDER, "categories");
+  var paths = new Array();
+  for (var lang of ["en", "nl"]) {
+    const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
+    const categories = await getTaxonomy(BLOG_FOLDER, "categories");
 
-  return categories.map((category) => {
-    return {
-      params: { category },
-    };
-  });
+    const paths2 = categories.map((category) => {
+      return {
+        params: { category },
+        lang: lang,
+      }
+    });
+    paths = paths.concat(paths2);
+  }
+  return paths;
 }
 
-const { category } = Astro.params;
+const category = Astro.params.category;
+const lang = Astro.params.lang as Language;
+
+const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
 
 // get posts by category
-const BLOG_FOLDER = "blog";
 const posts = await getSinglePage(BLOG_FOLDER);
 const filterByCategories = taxonomyFilter(posts, "categories", category!);
 const sortedPosts = sortByDate(filterByCategories);

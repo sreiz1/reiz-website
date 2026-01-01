@@ -4,14 +4,26 @@ import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
 import { getEntry, type CollectionEntry } from "astro:content";
+import type { Language } from "../../../types/language.type";
 
-const COLLECTION_FOLDER = "authors";
+export function getStaticPaths() {
+  return [{ params: { lang: "nl" } }, { params: { lang: "en" } }];
+}
 
-const authorIndex = (await getEntry(
-  COLLECTION_FOLDER,
-  "-index"
-)) as CollectionEntry<"authors">;
-const authors = await getSinglePage(COLLECTION_FOLDER);
+const lang = Astro.params.lang as Language;
+
+const authorIndex = ((lang == "nl") ?
+  (await getEntry("authorsNL", "-index")) as CollectionEntry<"authorsNL">
+  :
+  (await getEntry("authorsEN", "-index")) as CollectionEntry<"authorsEN">
+);
+
+const authors = ((lang == "nl") ?
+  await getSinglePage("authorsNL")
+  :
+  await getSinglePage("authorsEN")
+);
+
 ---
 
 <Base title={authorIndex.data.title}>

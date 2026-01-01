@@ -6,27 +6,35 @@ import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { slugify } from "@/lib/utils/textConverter";
 import { render } from "astro:content";
+import type { Language } from "../../../types/language.type";
 
-// get all static paths for authors
+// get all static paths for authors (for all languages at once!)
 export async function getStaticPaths() {
-  const COLLECTION_FOLDER = "authors";
-  const authors = await getSinglePage(COLLECTION_FOLDER);
+  var paths = new Array();
+  for (var lang of ["en", "nl"]) {
+    const COLLECTION_FOLDER = ((lang == "nl") ? "authorsNL" : "authorsEN");
+    const authors = await getSinglePage(COLLECTION_FOLDER);
 
-  const paths = authors.map((author) => ({
-    params: {
-      single: author.id,
-    },
-    props: { author },
-  }));
+    const paths2 = authors.map((author) => ({
+        params: {
+          single: author.id,
+          lang: lang,
+        },
+        props: { author },
+      }));
+    paths = paths.concat(paths2);
+  }
   return paths;
 }
 
-const { author } = Astro.props;
+const author = Astro.props.author;
+const lang = Astro.params.lang as Language;
 const { title, social, meta_title, description, image } = author.data;
 const { Content } = await render(author);
 
+const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
+
 // get all posts by author
-const BLOG_FOLDER = "blog";
 const posts = await getSinglePage(BLOG_FOLDER);
 const postFilterByAuthor = posts.filter(
   (post) => slugify(post.data.author) === slugify(title)

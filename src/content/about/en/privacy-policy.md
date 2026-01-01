@@ -31,7 +31,7 @@ This summary provides key points from our Privacy Notice, but you can find out m
 
 **What are your rights?** Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information.
 
-**How do you exercise your rights?** The easiest way to exercise your rights is by visiting [our contact page](/contact) and letting us know your concerns. We will consider and act upon any request in accordance with applicable data protection laws.
+**How do you exercise your rights?** The easiest way to exercise your rights is by visiting [our contact page](/en/contact) and letting us know your concerns. We will consider and act upon any request in accordance with applicable data protection laws.
 
 Want to learn more about what we do with any information we collect? Review the Privacy Notice in full.
 
@@ -90,7 +90,7 @@ We process your personal information for a variety of reasons, depending on how 
 **If you are located in the EU or UK, this section applies to you.**
 
 The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases to process your personal information:
-* Consent. We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time by visiting [our contact page](/contact).
+* Consent. We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time by visiting [our contact page](/en/contact).
 * Performance of a Contract. We may process your personal information when we believe it is necessary to fulfill our contractual obligations to you, including providing our Services or at your request prior to entering into a contract with you.
 * Legal Obligations. We may process your information where we believe it is necessary for compliance with our legal obligations, such as to cooperate with a law enforcement body or regulatory agency, exercise or defend our legal rights, or disclose your information as evidence in litigation in which we are involved.
 * Vital Interests. We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party, such as situations involving potential threats to the safety of any person.
@@ -207,7 +207,7 @@ Depending upon the state where you live, you may also have the following rights:
 * Right to limit use and disclosure of sensitive personal data (as permitted by applicable law, including the privacy law in California)
 
 ### How to Exercise Your Rights
-To exercise these rights, you can contact us by visiting [our contact page](/contact), by emailing us at info@reiz.nl, or by referring to the contact details at the bottom of this document.
+To exercise these rights, you can contact us by visiting [our contact page](/en/contact), by emailing us at info@reiz.nl, or by referring to the contact details at the bottom of this document.
 
 Under certain US state data protection laws, you can designate an authorized agent to make a request on your behalf. We may deny a request from an authorized agent that does not submit proof that they have been validly authorized to act on your behalf in accordance with applicable laws.
 
@@ -222,7 +222,7 @@ California Civil Code Section 1798.83, also known as the "Shine The Light" law, 
 ## 13. DO WE MAKE UPDATES TO THIS NOTICE?
 **In Short:** Yes, we will update this notice as necessary to stay compliant with relevant laws.
 
-We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice.
+We may update this Privacy Notice from time to time. The updated version will be indicated by an updated date at the top of this Privacy Notice.
 
 ## 14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
 If you have questions or comments about this notice, you may contact our Data Protection Officer (DPO) by email at info@reiz.nl, or contact us by post at:
@@ -233,11 +233,11 @@ If you have questions or comments about this notice, you may contact our Data Pr
     1112JP  Diemen 
     Netherlands
 
-If you are a resident in the European Economic Area or Switzerland, we are the "data controller" of your personal information. We have appointed Steven Reiz to be our representative in the EEA and Switzerland. You can contact them directly regarding our processing of your information, by email at info@reiz.nl, by visiting [our contact page](/contact), or by post to:
+If you are a resident in the European Economic Area or Switzerland, we are the "data controller" of your personal information. You can contact our representative directly regarding our processing of your information, by email at info@reiz.nl, by visiting [our contact page](/en/contact), or by post to:
 
     Karwijzaaderf 28
     1112JP  Diemen 
     Netherlands
 
 ## 15. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
-Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please visit [our contact page](/contact).
+Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please visit [our contact page](/en/contact).

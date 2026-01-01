@@ -4,16 +4,21 @@ import PostSingle from "@/layouts/PostSingle.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 
 export async function getStaticPaths() {
-  const BLOG_FOLDER = "blog";
-  const posts = await getSinglePage(BLOG_FOLDER);
+  var paths = new Array();
+  for (var lang of ["en", "nl"]) {
+    const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
+    const posts = await getSinglePage(BLOG_FOLDER);
 
-  const paths = posts.map((post) => ({
-    params: {
-      single: post.id,
-    },
-    props: { post },
-  }));
-  return paths;
+    const paths2 = posts.map((post) => ({
+      params: {
+        single: post.id,
+        lang: lang,
+      },
+      props: { post },
+    }));
+    paths = paths.concat(paths2);
+  }
+  return paths;  
 }
 
 const { post } = Astro.props;

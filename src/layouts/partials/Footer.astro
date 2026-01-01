@@ -20,7 +20,7 @@ const { footer }: { footer: { name: string; url: string }[] } = menu;
           {
             footer.map((menu) => (
               <li class="m-3 inline-block">
-                <a href={menu.url}>{menu.name}</a>
+                <a href={menu.url.replace('[locale]', Astro.currentLocale ?? "")}>{menu.name}</a>
               </li>
             ))
           }

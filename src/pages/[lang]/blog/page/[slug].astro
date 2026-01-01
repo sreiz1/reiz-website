@@ -10,14 +10,41 @@ import PageHeader from "@/partials/PageHeader.astro";
 import PostSidebar from "@/partials/PostSidebar.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
+import type { Language } from "../../../../types/language.type";
 
-const BLOG_FOLDER = "blog";
+export async function getStaticPaths() {
+  var paths = new Array();
+  for (var lang of ["en", "nl"]) {
+    const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
+    const posts = await getSinglePage(BLOG_FOLDER);
 
-const { slug } = Astro.params;
-const postIndex = (await getEntry(
-  BLOG_FOLDER,
-  "-index"
-)) as CollectionEntry<"blog">;
+    const totalPages = Math.ceil(posts.length / config.settings.pagination);
+    const paths2 = [];
+
+    for (let i = 1; i < totalPages; i++) {
+      paths2.push({
+        params: {
+          slug: (i + 1).toString(),
+          lang: lang,
+        },
+      });
+    }
+    paths = paths.concat(paths2);
+  }
+  return paths;
+}
+
+const slug = Astro.params.slug;
+const lang = Astro.params.lang as Language;
+
+const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
+
+const postIndex = ((lang == "nl") ?
+  (await getEntry(BLOG_FOLDER, "-index")) as CollectionEntry<"blogNL">
+  :
+  (await getEntry(BLOG_FOLDER, "-index")) as CollectionEntry<"blogEN">
+);
+
 const posts = await getSinglePage(BLOG_FOLDER);
 const allCategories = await getAllTaxonomy(BLOG_FOLDER, "categories");
 const categories = await getTaxonomy(BLOG_FOLDER, "categories");
@@ -29,21 +56,6 @@ const indexOfLastPost = currentPage * config.settings.pagination;
 const indexOfFirstPost = indexOfLastPost - config.settings.pagination;
 const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-export async function getStaticPaths() {
-  const BLOG_FOLDER = "blog";
-  const posts = await getSinglePage(BLOG_FOLDER);
-  const totalPages = Math.ceil(posts.length / config.settings.pagination);
-  const paths = [];
-
-  for (let i = 1; i < totalPages; i++) {
-    paths.push({
-      params: {
-        slug: (i + 1).toString(),
-      },
-    });
-  }
-  return paths;
-}
 ---
 
 <Base
