@@ -16,6 +16,7 @@
     "search": true,
     "sticky_header": true,
     "theme_switcher": true,
+    "language_picker": true,
     "default_theme": "system",
     "pagination": 2,
     "summary_length": 200,

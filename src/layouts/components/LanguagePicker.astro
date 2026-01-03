@@ -1,7 +1,40 @@
 ---
+import config from "@/config/config.json";
+import { Icon } from "astro-icon/components";
 
+const { language_picker } = config.settings;
+const { className }: { className?: string } = Astro.props;
+const lang = Astro.currentLocale;
+
+const LINK_DEST = lang == "nl" ? "/en" : "/nl";
+const SRC_ICON =
+  lang == "nl" ? "circle-flags--lang-nl" : "circle-flags--lang-en-us";
+const DST_ICON =
+  lang == "nl" ? "circle-flags--lang-en-us" : "circle-flags--lang-nl";
 ---
-<ul>
-    <li><a href={`/nl`}>Nederlands</a></li>
-    <li><a href={`/en`}>English</a></li>
-</ul>
+
+<style lang="css">
+    [data-icon] {
+        font-size: 1.3rem;
+    }
+</style>
+
+{
+  language_picker && (
+    <div class={`${className}`}>
+      <div class="inline-block">
+        <a class="btn btn-outline-primary btn-sm" href={LINK_DEST}>
+          <div class="grid grid-cols-3 gap-2">
+            <div>
+              <Icon name={SRC_ICON} />
+            </div>
+            <div>&rarr;</div>
+            <div>
+              <Icon name={DST_ICON} />
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  )
+}

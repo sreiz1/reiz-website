@@ -7,6 +7,7 @@ import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import sharp from "sharp";
+import icon from "astro-icon";
 import config from "./src/config/config.json";
 
 // https://astro.build/config
@@ -16,22 +17,17 @@ export default defineConfig({
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: { service: sharp() },
   vite: { plugins: [tailwindcss()] },
-  integrations: [
-    react(),
-    sitemap(),
-    AutoImport({
-      imports: [
-        "@/shortcodes/Button",
-        "@/shortcodes/Accordion",
-        "@/shortcodes/Notice",
-        "@/shortcodes/Video",
-        "@/shortcodes/Youtube",
-        "@/shortcodes/Tabs",
-        "@/shortcodes/Tab",
-      ],
-    }),
-    mdx(),
-  ],
+  integrations: [react(), sitemap(), AutoImport({
+    imports: [
+      "@/shortcodes/Button",
+      "@/shortcodes/Accordion",
+      "@/shortcodes/Notice",
+      "@/shortcodes/Video",
+      "@/shortcodes/Youtube",
+      "@/shortcodes/Tabs",
+      "@/shortcodes/Tab",
+    ],
+  }), mdx(), icon()],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
     shikiConfig: { theme: "one-dark-pro", wrap: true },
