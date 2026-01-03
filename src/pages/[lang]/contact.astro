@@ -4,13 +4,25 @@ import Base from "@/layouts/Base.astro";
 import PageHeader from "@/partials/PageHeader.astro";
 import { getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import type { Language } from "../../types/language.type";
+import { useTranslations } from "@/i18n/utils";
 
-const contact = (await getEntry(
-  "contact",
-  "-index"
-)) as CollectionEntry<"contact">;
+export function getStaticPaths() {
+  return [{ params: { lang: "nl" } }, { params: { lang: "en" } }];
+}
+
+const lang = Astro.params.lang as Language;
+
+const contact = ((lang == "nl") ?
+  (await getEntry("contactNL", "-index")) as CollectionEntry<"contactNL">
+  :
+  (await getEntry("contactEN", "-index")) as CollectionEntry<"contactEN">
+);
+
 const { contact_form_action }: { contact_form_action: string } = config.params;
 const { title, description, meta_title, image } = contact.data;
+
+const t = useTranslations(lang);
 ---
 
 <Base
@@ -27,40 +39,40 @@ const { title, description, meta_title, image } = contact.data;
           <form action={contact_form_action} method="POST">
             <div class="mb-6">
               <label for="name" class="form-label">
-                Full Name <span class="text-red-500">*</span>
+                {t('contact.name.label')} <span class="text-red-500">*</span>
               </label>
               <input
                 id="name"
                 name="name"
                 class="form-input"
-                placeholder="John Doe"
+                placeholder={t('contact.name.sample')}
                 type="text"
               />
             </div>
             <div class="mb-6">
               <label for="email" class="form-label">
-                Working Mail <span class="text-red-500">*</span>
+                {t('contact.email.label')} <span class="text-red-500">*</span>
               </label>
               <input
                 id="email"
                 name="email"
                 class="form-input"
-                placeholder="john.doe@email.com"
+                placeholder={t('contact.name.sample')}
                 type="email"
               />
             </div>
             <div class="mb-6">
               <label for="message" class="form-label">
-                Message details <span class="text-red-500">*</span>
+                {t('contact.message.label')} <span class="text-red-500">*</span>
               </label>
               <textarea
                 id="message"
                 name="message"
                 class="form-input"
-                placeholder="Message goes here..."
+                placeholder={t('contact.message.sample')}
                 rows="8"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{t('contact.submit.label')}</button>
           </form>
         </div>
       </div>

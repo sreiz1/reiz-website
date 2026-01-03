@@ -10,6 +10,7 @@ import { render } from "astro:content";
 import { FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 import ImageMod from "./components/ImageMod.astro";
 import type { Language } from "../types/language.type";
+import { useTranslations } from "@/i18n/utils";
 
 const post = Astro.props.post;
 const lang = Astro.props.lang as Language;
@@ -20,6 +21,9 @@ const posts = await getSinglePage(COLLECTION_FOLDER);
 const similarPosts = similarItems(post, posts);
 const { Content } = await render(post);
 const { title, description, author, categories, image, date, tags } = post.data;
+
+const t = useTranslations(lang);
+const rel_post_label = t('blog.related')
 ---
 
 <section class="section pt-7">
@@ -101,7 +105,7 @@ const { title, description, author, categories, image, date, tags } = post.data;
 
     <!-- Related posts -->
     <div class="section pb-0">
-      <h2 class="h3 mb-12 text-center">Related Posts</h2>
+      <h2 class="h3 mb-12 text-center">{rel_post_label}</h2>
       <div class="row justify-center">
         {
           similarPosts.map((post) => (

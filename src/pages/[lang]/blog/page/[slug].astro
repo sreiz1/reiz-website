@@ -38,6 +38,7 @@ const slug = Astro.params.slug;
 const lang = Astro.params.lang as Language;
 
 const BLOG_FOLDER = ((lang == "nl") ? "blogNL" : "blogEN");
+const BLOG_ROOT = ((lang == "nl") ? "nl/blog" : "en/blog");
 
 const postIndex = ((lang == "nl") ?
   (await getEntry(BLOG_FOLDER, "-index")) as CollectionEntry<"blogNL">
@@ -80,7 +81,7 @@ const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
             }
           </div>
           <Pagination
-            section={BLOG_FOLDER}
+            section={BLOG_ROOT}
             currentPage={currentPage}
             totalPages={totalPages}
           />

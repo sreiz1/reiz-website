@@ -115,8 +115,19 @@ const aboutCollectionNL = defineCollection({
 });
 
 // contact collection schema
-const contactCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/contact" }),
+const contactCollectionEN = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/contact/en" }),
+  schema: z.object({
+    title: z.string(),
+    meta_title: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
+const contactCollectionNL = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/contact/nl" }),
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
@@ -255,7 +266,8 @@ export const collections = {
   pages: pagesCollection,
   aboutEN: aboutCollectionEN,
   aboutNL: aboutCollectionNL,
-  contact: contactCollection,
+  contactEN: contactCollectionEN,
+  contactNL: contactCollectionNL,
 
   // sections
   ctaSectionEN: ctaSectionCollectionEN,
