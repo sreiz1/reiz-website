@@ -3,8 +3,10 @@ import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
 import { render } from "astro:content";
+import type { Language } from "../../types/language.type";
 
 // get static paths for all pages
+// NB src/content/pages not used for now, not localized yet, dummy lang
 export async function getStaticPaths() {
   const COLLECTION_FOLDER = "pages";
 
@@ -13,6 +15,7 @@ export async function getStaticPaths() {
   const paths = pages.map((page) => ({
     params: {
       regular: page.id,
+      lang: "en",
     },
     props: { page },
   }));
