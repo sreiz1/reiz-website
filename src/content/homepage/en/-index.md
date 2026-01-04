@@ -7,7 +7,7 @@ banner:
   button:
     enable: true
     label: "Get Started"
-    link: "/contact"
+    link: "/en/contact"
 
 # Features
 features:
@@ -19,7 +19,7 @@ features:
     button:
       enable: false
       label: "Get Started Now"
-      link: "#"
+      link: "/en/contact"
 
   - title: "The Top Reasons to Choose Us for Your Next Project"
     image: "/images/service-y.png"
@@ -31,5 +31,5 @@ features:
     button:
       enable: true
       label: "Get Started Now"
-      link: "/contact"
+      link: "/en/contact"
 ---

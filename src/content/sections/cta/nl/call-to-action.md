@@ -6,5 +6,5 @@ description: "We verbeteren de wereld door IT technologie en gezond verstand toe
 button:
   enable: true
   label: "Neem contact op"
-  link: "/contact"
+  link: "/nl/contact"
 ---

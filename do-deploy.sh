@@ -4,8 +4,9 @@
 
 rm -rf ~/git/reiznl-deploy/*
 cp -r dist/* ~/git/reiznl-deploy/
+cp app.py Procfile requirements.txt .python-version ~/git/reiznl-deploy/
 cd ~/git/reiznl-deploy
-touch .static
+rm -f .static
 git add .
 git commit -m "Deploying to dokku"
 git push dokku main

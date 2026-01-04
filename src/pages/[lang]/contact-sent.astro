@@ -1,0 +1,46 @@
+---
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import { getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import type { Language } from "../../types/language.type";
+import { useTranslations } from "@/i18n/utils";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "nl" } }, { params: { lang: "en" } }];
+}
+
+const lang = Astro.params.lang as Language;
+
+const contact = ((lang == "nl") ?
+  (await getEntry("contactNL", "-index")) as CollectionEntry<"contactNL">
+  :
+  (await getEntry("contactEN", "-index")) as CollectionEntry<"contactEN">
+);
+
+const { contact_form_action }: { contact_form_action: string } = config.params;
+const { title, description, meta_title, image } = contact.data;
+
+const t = useTranslations(lang);
+---
+
+<Base
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
+>
+  <PageHeader title={title} />
+  <section class="section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto md:col-10 lg:col-6">
+          <p class="text-center text-lg font-medium">
+            {t('contact.sent.label')}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -6,5 +6,5 @@ description: "To make the world a better place by applying IT technology and com
 button:
   enable: true
   label: "Contact Us"
-  link: "/contact"
+  link: "/en/contact"
 ---

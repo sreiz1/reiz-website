@@ -40,6 +40,9 @@ package-lock.json
 # python
 reiz_env/
 secret-keys.json
+__pycache__/
+*.pyc
+.venv/
 
 # unclear
 **/*:Zone.Identifier

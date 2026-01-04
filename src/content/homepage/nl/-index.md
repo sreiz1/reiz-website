@@ -7,7 +7,7 @@ banner:
   button:
     enable: true
     label: "Aan de slag"
-    link: "/contact"
+    link: "/nl/contact"
 
 # Features
 features:
@@ -19,7 +19,7 @@ features:
     button:
       enable: false
       label: "Nu aan de slag"
-      link: "#"
+      link: "/nl/contact"
 
   - title: "De belangrijkste redenen om ons te kiezen voor uw volgende project"
     image: "/images/service-y.png"
@@ -31,5 +31,5 @@ features:
     button:
       enable: true
       label: "Nu aan de slag"
-      link: "/contact"
+      link: "/nl/contact"
 ---
