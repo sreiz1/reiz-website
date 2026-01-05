@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: "Projectmanagement voor de meest uitdagende projecten"
-  content: "Reiz I.T. Solutions B.V. biedt IT-projectmanagement en bedrijfsanalysexpertise voor de energie-, nutsvoorzieningen- en financiële sectoren, waardoor u zelfs de lastigste projecten kunt aanpakken."
+  content: "Reiz I.T. Solutions B.V. biedt IT-projectmanagement en bedrijfsanalyse-expertise voor energie- en nutsvoorzieningen en voor de financiële sectoren, waardoor u zelfs de lastigste projecten kunt aanpakken."
   image: "/images/banner.jpg"
   button:
     enable: true
